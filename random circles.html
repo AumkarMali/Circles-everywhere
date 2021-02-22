@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>canefuuushun</title>
+    <script type="text/javascript">
+
+        let colors = ["red", "blue", "green", "purple", "pink", "yellow", "orange", "gold"]
+        function draw() {
+
+            let i = 0
+
+            while (i >= 0 && i <= 50) {
+
+                i = i + 0.5;
+
+                console.log();
+                canvas = document.getElementById('tutorial');
+                if (canvas.getContext) {
+                    var ctx = canvas.getContext('2d');
+                    //draw circles
+
+                    var radius = Math.random() * 80; //redius of circle
+                    var rheight = Math.random() * 80; // rectangle height
+                    var xpos = Math.random() * 1200;  //x - co-ordinate centre of the circle
+                    var ypos = Math.random() * 900;  //y - co-ordinate centre of the circle
+
+                    ctx.beginPath();
+                    ctx.arc(xpos, ypos, radius, Math.PI * 2, false);
+                    ctx.closePath();
+
+                    rand = Math.floor(Math.random() * 10);
+                    ctx.fillStyle = colors[rand];
+                    ctx.fill();
+                }
+
+
+
+
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <body onload="draw();">
+        <canvas id="tutorial" width="2000" height="1000"></canvas>
+    </body>
+
+</html>
